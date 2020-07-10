@@ -7,16 +7,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   && bash setup14.sh \
   && apt install -y nodejs \
   && apt install -y git \
-  && npm i -g yarn \
-  && adduser --disabled-password --gecos '' foorx \
-  && adduser foorx sudo \
-  && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-USER foorx
-
-WORKDIR /home/foorx
-
-RUN chmod a+rwx /home/foorx
+  && npm i -g yarn 
 
 ENTRYPOINT ["/bin/bash"]
 
